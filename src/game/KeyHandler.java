@@ -1,0 +1,103 @@
+package game;
+
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+public class KeyHandler implements KeyListener {
+	
+	static int gamepaused = 0;
+	
+	@Override
+	public void keyTyped(KeyEvent e) {
+	}
+	
+	@Override
+	public void keyPressed(KeyEvent e) {
+		
+		if(e.getKeyCode() == KeyEvent.VK_UP) {
+			Var.moveup = true;
+		}
+		if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+			Var.movedown = true;
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+			Var.moveleft = true;
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+			Var.moveright = true;
+		}
+		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+			if(Var.gamerunning && Var.rockets > 0 && Var.rocketfired == false) {
+				Var.rocketfired = true;
+				Var.rocketposX = Var.playerpositionX + 50;
+				Var.rocketposY = Var.playerpositionY;
+				Var.rockets--;
+			}
+		}
+		if(gamepaused == 0) {
+			// Menue
+			if(e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+				Var.gamerunning = false;
+				Var.inmenue = true;
+				Var.inshop = false;
+				Var.inoptions = false;
+				Var.btnresume.setVisible(true);
+				Var.btnshop.setVisible(true);
+				Var.btnoptions.setVisible(true);
+				Var.btnexit.setVisible(true);
+				gamepaused++;
+			} else if(e.getKeyCode() == KeyEvent.VK_S) {
+				Var.gamerunning = false;
+				Var.inmenue = false;
+				Var.inshop = true;
+				Var.inoptions = false;
+				Var.btnlives.setVisible(true);
+				Var.btnrockets.setVisible(true);
+				Var.btnshield.setVisible(true);
+				gamepaused++;
+			}
+		} else if(gamepaused == 1) {
+			if(e.getKeyCode() == KeyEvent.VK_ESCAPE || e.getKeyCode() == KeyEvent.VK_S) {
+				Var.gamerunning = true;
+				Var.inmenue = false;
+				Var.inshop = false;
+				Var.inoptions = false;
+				Var.btnresume.setVisible(false);
+				Var.btnshop.setVisible(false);
+				Var.btnoptions.setVisible(false);
+				Var.btnexit.setVisible(false);
+				Var.btnlives.setVisible(false);
+				Var.btnrockets.setVisible(false);
+				Var.btnshield.setVisible(false);
+				Var.btnmute.setVisible(false);
+				gamepaused--;
+				Refresh.temprefresh = 0;
+			}
+		}
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		
+		if(e.getKeyCode() == KeyEvent.VK_UP) {
+			Var.moveup = false;
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+			Var.movedown = false;
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+			Var.moveleft = false;
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+			Var.moveright = false;
+		}
+		
+	}
+	
+}
