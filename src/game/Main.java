@@ -23,5 +23,6 @@ public class Main {
 		new RocketFiring();
 		new Difficulty();
 		new Victory();
+		new Timelapse();
 	}
 }

@@ -152,8 +152,34 @@ public class GUI {
 			}
 		});
 		
+		Var.btntimelapse = new JButton();
+		Var.btntimelapse.setText("+ 3");
+		Var.btntimelapse.setBounds(700, 210, 200, 50);
+		Var.btntimelapse.setVisible(false);
+		Var.btntimelapse.addActionListener(new ActionHandler());
+		Var.btntimelapse.setBackground(Color.BLACK);
+		Var.btntimelapse.setFont(new Font("Arial", Font.BOLD, 40));
+		Var.btntimelapse.setForeground(Color.WHITE);
+		Var.btntimelapse.setBorder(null);
+		Var.btntimelapse.setFocusPainted(false);
+		Var.btntimelapse.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent evt) {
+				if(Var.coinscollected >= Var.pricetimelapse) {
+					Var.btntimelapse.setBackground(new Color(0, 230, 115));
+					Var.btntimelapse.setForeground(Color.BLACK);
+				} else {
+					Var.btntimelapse.setBackground(Color.RED);
+					Var.btntimelapse.setForeground(Color.BLACK);
+				}
+			}
+			public void mouseExited(MouseEvent evt) {
+				Var.btntimelapse.setBackground(Color.BLACK);
+				Var.btntimelapse.setForeground(Color.WHITE);
+			}
+		});
+		
 		Var.btnlives = new JButton();
-		Var.btnlives.setText("Buy");
+		Var.btnlives.setText("+ 1");
 		Var.btnlives.setBounds(700, 330, 200, 50);
 		Var.btnlives.setVisible(false);
 		Var.btnlives.addActionListener(new ActionHandler());
@@ -179,7 +205,7 @@ public class GUI {
 		});
 
 		Var.btnrockets = new JButton();
-		Var.btnrockets.setText("Buy");
+		Var.btnrockets.setText("+ 20");
 		Var.btnrockets.setBounds(700, 450, 200, 50);
 		Var.btnrockets.setVisible(false);
 		Var.btnrockets.addActionListener(new ActionHandler());
@@ -205,7 +231,7 @@ public class GUI {
 		});
 
 		Var.btnshield = new JButton();
-		Var.btnshield.setText("Buy");
+		Var.btnshield.setText("+ 5");
 		Var.btnshield.setBounds(700, 570, 200, 50);
 		Var.btnshield.setVisible(false);
 		Var.btnshield.addActionListener(new ActionHandler());
@@ -278,6 +304,7 @@ public class GUI {
 		Var.jf1.add(Var.btnoptions);
 		Var.jf1.add(Var.btnexit);
 		Var.jf1.add(Var.btnmute);
+		Var.jf1.add(Var.btntimelapse);
 		Var.jf1.add(Var.btnlives);
 		Var.jf1.add(Var.btnrockets);
 		Var.jf1.add(Var.btnshield);

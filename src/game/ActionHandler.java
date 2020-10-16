@@ -20,6 +20,7 @@ public class ActionHandler implements ActionListener {
 			Var.btnoptions.setVisible(false);
 			Var.btnexit.setVisible(false);
 			Var.btnmute.setVisible(false);
+			Var.btntimelapse.setVisible(false);
 			Var.btnlives.setVisible(false);
 			Var.btnrockets.setVisible(false);
 			Var.btnshield.setVisible(false);
@@ -40,6 +41,7 @@ public class ActionHandler implements ActionListener {
 			Var.btnoptions.setVisible(false);
 			Var.btnexit.setVisible(false);
 			
+			Var.btntimelapse.setVisible(true);
 			Var.btnlives.setVisible(true);
 			Var.btnrockets.setVisible(true);
 			Var.btnshield.setVisible(true);
@@ -66,6 +68,15 @@ public class ActionHandler implements ActionListener {
 			
 			System.exit(0);
 			
+		} else if(e.getSource()==Var.btntimelapse) {
+			if(Var.coinscollected >= Var.pricetimelapse) {
+				Var.coinscollected -= Var.pricetimelapse;
+				Var.timelapsesec += 3;
+				if(Var.timelapsems == 0) {
+					Var.timelapsems = 999;
+				}
+			}
+			Var.jf1.requestFocus();	
 		} else if(e.getSource()==Var.btnlives) {
 			if(Var.coinscollected >= Var.pricelife) {
 				Var.coinscollected -= Var.pricelife;

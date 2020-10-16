@@ -108,10 +108,19 @@ public class Label extends JLabel {
 				g.setColor(new Color(0, 230, 115));
 				g.setFont(new Font("Arial", Font.BOLD, 30));
 				
+				g.drawImage(Var.itimelapse, 50, 655, 50, 50, null);
+				g.drawString("" + (Var.timelapsesec == 0 ? Var.timelapsesec : Var.timelapsesec - 1) + "s", 120, 690);
+				g.drawString("" + Var.timelapsems + "ms", 180, 690);
+				
 				g.drawImage(Var.irocketicon, 50, 715, 50, 50, null);
 				g.drawString("" + Var.rockets, 120, 750);
 				g.drawImage(Var.ishield, 50, 775, 50, 50, null);
 				g.drawString("" + Var.shieldcharges, 120, 810);
+			}
+			
+			if(Var.timelapse) {
+				g.setColor(new Color(120, 20, 150, 50));
+				g.fillRect(0, 0, Var.screenwidth, Var.screenheight);
 			}
 			
 			repaint();
@@ -163,6 +172,11 @@ public class Label extends JLabel {
 			g.setColor(new Color(0, 230, 115));
 			g.setFont(new Font("Arial", Font.BOLD, 30));
 			
+			
+			g.drawImage(Var.itimelapse, 50, 655, 50, 50, null);
+			g.drawString("" + (Var.timelapsesec == 0 ? Var.timelapsesec : Var.timelapsesec - 1) + "s", 120, 690);
+			g.drawString("" + Var.timelapsems + "ms", 180, 690);
+			
 			g.drawImage(Var.irockets, 65, 715, 20, 50, null);
 			g.drawString(""+ Var.rockets, 120, 750);
 			g.drawImage(Var.ishield, 50, 775, 50, 50, null);
@@ -171,9 +185,11 @@ public class Label extends JLabel {
 			if(Var.inshop) {
 				g.setColor(new Color(0, 230, 115));
 				g.setFont(new Font("Arial", Font.BOLD, 50));
+				g.drawImage(Var.itimelapse, 300, 180, 100, 100, null);
+				g.drawString("Price: " + Var.pricetimelapse, 430, 250);
 				g.drawImage(Var.ilives, 300, 300, 100, 100, null);
 				g.drawString("Price: " + Var.pricelife, 430, 370);
-				g.drawImage(Var.irockets, 330, 420, 40, 100, null);
+				g.drawImage(Var.irocketicon, 300, 420, 100, 100, null);
 				g.drawString("Price: " + Var.pricerockets, 430, 490);
 				g.drawImage(Var.ishield, 300, 540, 100, 100, null);
 				g.drawString("Price: " + Var.priceshield, 430, 610);

@@ -14,16 +14,19 @@ public class Victory {
 			@Override
 			public void run() {
 				
-				if(Var.coinscollected >= 500) {
+				if(Var.coinscollected >= 600) {
 					Var.victory = true;
 				}
 				if(Var.victory) {
 					Var.gamerunning = false;
 					Var.btnrestart.setVisible(true);
 					Var.btnclose.setVisible(true);
+					
 					Var.coinscollected = 0;
 					Var.crystalscollected = 0;
 					Var.shieldcharges = 0;
+					Var.timelapsesec = 10;
+					Var.timelapsems = 999;
 					Var.rockets = 20;
 					Var.lives = 3;
 					Var.maxlives = 5;

@@ -17,7 +17,7 @@ public class Var {
 	
 	static JButton btnstart, btnresume, btnshop, btnoptions, btnexit;
 	static JButton btnmute;
-	static JButton btnlives, btnrockets, btnshield;
+	static JButton btntimelapse, btnlives, btnrockets, btnshield;
 	static JButton btnrestart, btnclose;
 	
 	static int screenwidth = 1200;
@@ -33,7 +33,7 @@ public class Var {
 	static int rockets = 20;
 	static int rocketposX, rocketposY;
 	static int shieldcharges = 0;
-	static int pricelife = 30, pricerockets = 40, priceshield = 50;	
+	static int pricetimelapse = 20, pricelife = 30, pricerockets = 40, priceshield = 50;	
 	static int enemyX[] = new int[5], enemyY[] = new int[5];
 	static int enemyspeed[] = new int[5];
 	static int enemyexpposX, enemyexpposY;
@@ -41,6 +41,7 @@ public class Var {
 	static int crystalsspeed[] = new int[3];
 	static int coinsX[] = new int[3], coinsY[] = new int[3];;
 	static int coinsspeed[] = new int[3];
+	static int timelapsesec = 10, timelapsems = 999;
 	
 	static boolean gamerunning = false, instartscreen = true, inmenue = false, inoptions = false, inshop = false;
 	static boolean victory = false;
@@ -49,6 +50,7 @@ public class Var {
 	static boolean shieldactive = false;
 	static boolean rocketfired = false, enemyhit = false;
 	static boolean stopmusic = false;
+	static boolean timelapse = false;
 	
 	static BufferedImage ib1, ib2;
 	static BufferedImage ispaceship;
@@ -61,9 +63,10 @@ public class Var {
 	static BufferedImage ishieldgame;
 	static BufferedImage ilives, irockets, irocketicon, ishield;
 	static BufferedImage ilogo;
+	static BufferedImage itimelapse;
 	
 	static Image gifenemyexplosion;
-	static MusicPlayer musicplayer = new MusicPlayer("audio/Cosmo_and_Kramer-Really-Original.wav");
+	static MusicPlayer musicplayer = new MusicPlayer("audio/molecule_leitmotiv.wav");
 	
 	public Var() {
 		musicplayer.playmusic();
@@ -93,6 +96,7 @@ public class Var {
 			ishieldgame = ImageIO.read(new File("rsc/shield_game.png"));
 			gifenemyexplosion = Toolkit.getDefaultToolkit().createImage("rsc/explosion.gif");
 			ilogo = ImageIO.read(new File("rsc/star_rift_logo.png"));
+			itimelapse = ImageIO.read(new File("rsc/timelapse.png"));
 		}
 		catch(IOException e) {
 			e.printStackTrace();

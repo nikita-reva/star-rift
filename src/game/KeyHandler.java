@@ -36,6 +36,12 @@ public class KeyHandler implements KeyListener {
 				Var.rockets--;
 			}
 		}
+		if(e.getKeyCode() == KeyEvent.VK_T) {
+			if(Var.timelapsesec > 0) {
+				Var.timelapse = true;
+			}
+		}
+		
 		if(gamepaused == 0) {
 			// Menue
 			if(e.getKeyCode() == KeyEvent.VK_ESCAPE) {
@@ -53,6 +59,7 @@ public class KeyHandler implements KeyListener {
 				Var.inmenue = false;
 				Var.inshop = true;
 				Var.inoptions = false;
+				Var.btntimelapse.setVisible(true);
 				Var.btnlives.setVisible(true);
 				Var.btnrockets.setVisible(true);
 				Var.btnshield.setVisible(true);
@@ -68,6 +75,7 @@ public class KeyHandler implements KeyListener {
 				Var.btnshop.setVisible(false);
 				Var.btnoptions.setVisible(false);
 				Var.btnexit.setVisible(false);
+				Var.btntimelapse.setVisible(false);
 				Var.btnlives.setVisible(false);
 				Var.btnrockets.setVisible(false);
 				Var.btnshield.setVisible(false);
@@ -96,6 +104,9 @@ public class KeyHandler implements KeyListener {
 		
 		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			Var.moveright = false;
+		}
+		if(e.getKeyCode() == KeyEvent.VK_T) {
+			Var.timelapse = false;
 		}
 		
 	}

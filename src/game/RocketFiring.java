@@ -19,7 +19,7 @@ public class RocketFiring {
 			public void run() {
 				if(Var.gamerunning) {
 					if(Var.rocketfired) {
-						Var.rocketposY -= 3;
+						Var.rocketposY -= 5;
 					}
 					
 					for(int i = 0; i < 5; i++) {
