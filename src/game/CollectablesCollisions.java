@@ -33,6 +33,7 @@ public class CollectablesCollisions {
 						
 						if(Var.lives >= Var.maxlives) {
 							Var.crystalscollected = 0;
+							Var.coinscollected += 2;
 						}
 					}
 				}

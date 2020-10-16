@@ -71,7 +71,7 @@ public class ActionHandler implements ActionListener {
 		} else if(e.getSource()==Var.btntimelapse) {
 			if(Var.coinscollected >= Var.pricetimelapse) {
 				Var.coinscollected -= Var.pricetimelapse;
-				Var.timelapsesec += 3;
+				Var.timelapsesec += 5;
 				if(Var.timelapsems == 0) {
 					Var.timelapsems = 999;
 				}

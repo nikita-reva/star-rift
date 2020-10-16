@@ -153,7 +153,7 @@ public class GUI {
 		});
 		
 		Var.btntimelapse = new JButton();
-		Var.btntimelapse.setText("+ 3");
+		Var.btntimelapse.setText("+ 5s");
 		Var.btntimelapse.setBounds(700, 210, 200, 50);
 		Var.btntimelapse.setVisible(false);
 		Var.btntimelapse.addActionListener(new ActionHandler());
