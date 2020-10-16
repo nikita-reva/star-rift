@@ -29,9 +29,9 @@ public class GUI {
 		Var.btnstart.setBounds(500, 550, 200, 50);
 		Var.btnstart.setVisible(true);
 		Var.btnstart.addActionListener(new ActionHandler());
-		Var.btnstart.setBackground(Color.BLACK);
+		Var.btnstart.setBackground(Color.LIGHT_GRAY);
 		Var.btnstart.setFont(new Font("Arial", Font.BOLD, 40));
-		Var.btnstart.setForeground(Color.WHITE);
+		Var.btnstart.setForeground(Color.BLACK);
 		Var.btnstart.setBorder(null);
 		Var.btnstart.setFocusPainted(false);
 		Var.btnstart.addMouseListener(new MouseAdapter() {
@@ -40,8 +40,8 @@ public class GUI {
 				Var.btnstart.setForeground(Color.BLACK);
 			}
 			public void mouseExited(MouseEvent evt) {
-				Var.btnstart.setBackground(Color.BLACK);
-				Var.btnstart.setForeground(Color.WHITE);
+				Var.btnstart.setBackground(Color.LIGHT_GRAY);
+				Var.btnstart.setForeground(Color.BLACK);
 			}
 		});
 		
