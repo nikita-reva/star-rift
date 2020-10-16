@@ -26,7 +26,7 @@ public class GUI {
 		
 		Var.btnstart = new JButton();
 		Var.btnstart.setText("Start");
-		Var.btnstart.setBounds(500, 400, 200, 50);
+		Var.btnstart.setBounds(500, 550, 200, 50);
 		Var.btnstart.setVisible(true);
 		Var.btnstart.addActionListener(new ActionHandler());
 		Var.btnstart.setBackground(Color.BLACK);
@@ -230,6 +230,48 @@ public class GUI {
 			}
 		});
 		
+		Var.btnrestart = new JButton();
+		Var.btnrestart.setText("Restart");
+		Var.btnrestart.setBounds(500, 400, 200, 50);
+		Var.btnrestart.setVisible(false);
+		Var.btnrestart.addActionListener(new ActionHandler());
+		Var.btnrestart.setBackground(Color.LIGHT_GRAY);
+		Var.btnrestart.setFont(new Font("Arial", Font.BOLD, 40));
+		Var.btnrestart.setForeground(Color.BLACK);
+		Var.btnrestart.setBorder(null);
+		Var.btnrestart.setFocusPainted(false);
+		Var.btnrestart.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent evt) {
+				Var.btnrestart.setBackground(new Color(0, 230, 115));
+				Var.btnrestart.setForeground(Color.BLACK);
+			}
+			public void mouseExited(MouseEvent evt) {
+				Var.btnrestart.setBackground(Color.LIGHT_GRAY);
+				Var.btnrestart.setForeground(Color.BLACK);
+			}
+		});
+		
+		Var.btnclose = new JButton();
+		Var.btnclose.setText("Close");
+		Var.btnclose.setBounds(500, 500, 200, 50);
+		Var.btnclose.setVisible(false);
+		Var.btnclose.addActionListener(new ActionHandler());
+		Var.btnclose.setBackground(Color.LIGHT_GRAY);
+		Var.btnclose.setFont(new Font("Arial", Font.BOLD, 40));
+		Var.btnclose.setForeground(Color.BLACK);
+		Var.btnclose.setBorder(null);
+		Var.btnclose.setFocusPainted(false);
+		Var.btnclose.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent evt) {
+				Var.btnclose.setBackground(Color.RED);
+				Var.btnclose.setForeground(Color.BLACK);
+			}
+			public void mouseExited(MouseEvent evt) {
+				Var.btnclose.setBackground(Color.LIGHT_GRAY);
+				Var.btnclose.setForeground(Color.BLACK);
+			}
+		});
+		
 		Var.jf1.add(Var.btnstart);
 		Var.jf1.add(Var.btnresume);
 		Var.jf1.add(Var.btnshop);
@@ -240,6 +282,8 @@ public class GUI {
 		Var.jf1.add(Var.btnrockets);
 		Var.jf1.add(Var.btnshield);
 		Var.jf1.add(Var.btnmute);
+		Var.jf1.add(Var.btnrestart);
+		Var.jf1.add(Var.btnclose);
 		
 		Var.jf1.add(Var.lbl1);
 		

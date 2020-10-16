@@ -13,38 +13,32 @@ import javax.swing.JFrame;
 public class Var {
 	
 	static JFrame jf1;
+	static Label lbl1;
+	
+	static JButton btnstart, btnresume, btnshop, btnoptions, btnexit;
+	static JButton btnmute;
+	static JButton btnlives, btnrockets, btnshield;
+	static JButton btnrestart, btnclose;
+	
 	static int screenwidth = 1200;
 	static int screenheight = 900;
 	static int backgroundY1 = 0, backgroundY2 = -900, backgroundspeed = 3;
-	
 	static int playerpositionX = 540, playerpositionY = 680;
 	static int playerwidth = 120, playerheight = 90;
 	static int lives = 3, maxlives = 5;
 	static int crystalscollected = 0, coinscollected = 0;
 	static int expanimation, expanimation2;
-	
 	static int speedup = 6, speeddown = 4, speedleft = 5, speedright = 5;
-
 	static int flame = 1, flameanimation;
-	
-	static JButton btnstart, btnresume, btnshop, btnoptions, btnexit;
-	static JButton btnmute;
-	
-	static Label lbl1;
-	
-	static JButton btnlives, btnrockets, btnshield;
 	static int rockets = 20;
 	static int rocketposX, rocketposY;
-	static int shield = 0, shieldcharges = 0;
-	static int pricelife = 30, pricerockets = 40, priceshield = 50;
-	
+	static int shieldcharges = 0;
+	static int pricelife = 30, pricerockets = 40, priceshield = 50;	
 	static int enemyX[] = new int[5], enemyY[] = new int[5];
 	static int enemyspeed[] = new int[5];
 	static int enemyexpposX, enemyexpposY;
-	
 	static int crystalsX[] = new int[3], crystalsY[] = new int[3];;
 	static int crystalsspeed[] = new int[3];
-	
 	static int coinsX[] = new int[3], coinsY[] = new int[3];;
 	static int coinsspeed[] = new int[3];
 	
@@ -66,6 +60,7 @@ public class Var {
 	static BufferedImage iexplosiondamaged[] = new BufferedImage[17];
 	static BufferedImage ishieldgame;
 	static BufferedImage ilives, irockets, irocketicon, ishield;
+	static BufferedImage ilogo;
 	
 	static Image gifenemyexplosion;
 	static MusicPlayer musicplayer = new MusicPlayer("audio/Cosmo_and_Kramer-Really-Original.wav");
@@ -97,6 +92,7 @@ public class Var {
 			ishield = ImageIO.read(new File("rsc/shield.png"));
 			ishieldgame = ImageIO.read(new File("rsc/shield_game.png"));
 			gifenemyexplosion = Toolkit.getDefaultToolkit().createImage("rsc/explosion.gif");
+			ilogo = ImageIO.read(new File("rsc/star_rift_logo.png"));
 		}
 		catch(IOException e) {
 			e.printStackTrace();

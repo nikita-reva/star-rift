@@ -183,12 +183,10 @@ public class Label extends JLabel {
 		} else if(Var.instartscreen) {
 			g.drawImage(Var.ib1, 0, Var.backgroundY1, Var.screenwidth, Var.screenheight, null);
 			g.drawImage(Var.ib2, 0, Var.backgroundY2, Var.screenwidth, Var.screenheight, null);
+			g.drawImage(Var.ilogo, 100, 100, 1000, 500, null);
+			
 			
 			g.drawImage(Var.ispaceship, Var.playerpositionX, Var.playerpositionY, Var.playerwidth, Var.playerheight, null);
-			
-			g.setColor(new Color(250, 50, 50));
-			g.setFont(new Font("Arial", Font.BOLD, 80));
-			g.drawString("Star Rift", 440, 350);
 			
 			repaint();
 		} else if(Var.victory) {
@@ -197,9 +195,9 @@ public class Label extends JLabel {
 			
 			g.drawImage(Var.ispaceship, Var.playerpositionX, Var.playerpositionY, Var.playerwidth, Var.playerheight, null);
 			
-			g.setColor(new Color(250, 50, 50));
+			g.setColor(new Color(120, 30, 180));
 			g.setFont(new Font("Arial", Font.BOLD, 80));
-			g.drawString("Victory", 440, 350);
+			g.drawString("Victory!", 455, 350);
 			
 			repaint();
 		}

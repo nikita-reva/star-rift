@@ -15,28 +15,30 @@ public class Victory {
 			public void run() {
 				
 				if(Var.coinscollected >= 500) {
-					Var.gamerunning = false;
 					Var.victory = true;
 				}
 				if(Var.victory) {
+					Var.gamerunning = false;
+					Var.btnrestart.setVisible(true);
+					Var.btnclose.setVisible(true);
+					Var.coinscollected = 0;
+					Var.crystalscollected = 0;
+					Var.shieldcharges = 0;
+					Var.rockets = 20;
+					Var.lives = 3;
+					Var.maxlives = 5;
+					
 					for(int i = 0; i < 5; i++) {
-						Var.enemyY[i] = -4000;
+						Var.enemyY[i] = -2000;
 					}
 					
 					for(int i = 0; i < 3; i++) {
-						Var.crystalsY[i] = -4000;
+						Var.crystalsY[i] = -2000;
 					}
 					
 					for(int i = 0; i < 3; i++) {
-						Var.coinsY[i] = -4000;
+						Var.coinsY[i] = -2000;
 					}
-					
-					try {
-						Thread.sleep(2000);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-					Var.victory = false;
 				}
 				
 			}

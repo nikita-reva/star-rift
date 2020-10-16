@@ -104,7 +104,16 @@ public class ActionHandler implements ActionListener {
 			Var.gamerunning = true;
 			
 			Var.jf1.requestFocus();
-		}		
+		}	else if(e.getSource()==Var.btnrestart) {
+			Var.victory = false;
+			Var.btnrestart.setVisible(false);
+			Var.btnclose.setVisible(false);		
+			Var.gamerunning = true;
+			
+			Var.jf1.requestFocus();
+		} else if(e.getSource()==Var.btnclose) {
+			System.exit(0);
+		}					
 		
 	}
 
