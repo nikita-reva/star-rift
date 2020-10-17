@@ -16,7 +16,7 @@ public class Var {
 	static Label lbl1;
 	
 	static JButton btnstart, btnresume, btnshop, btnoptions, btnexit;
-	static JButton btnmute;
+	static JButton btnmute, btntrack1, btntrack2;
 	static JButton btntimelapse, btnlives, btnrockets, btnshield;
 	static JButton btnrestart, btnclose;
 	
@@ -42,6 +42,7 @@ public class Var {
 	static int coinsX[] = new int[3], coinsY[] = new int[3];;
 	static int coinsspeed[] = new int[3];
 	static int timelapsesec = 10, timelapsems = 999;
+	static int activetrack = 1;
 	
 	static boolean gamerunning = false, instartscreen = true, inmenue = false, inoptions = false, inshop = false;
 	static boolean victory = false;

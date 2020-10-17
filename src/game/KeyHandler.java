@@ -80,6 +80,9 @@ public class KeyHandler implements KeyListener {
 				Var.btnrockets.setVisible(false);
 				Var.btnshield.setVisible(false);
 				Var.btnmute.setVisible(false);
+				Var.btntrack1.setVisible(false);
+				Var.btntrack2.setVisible(false);
+
 				gamepaused--;
 				Refresh.temprefresh = 0;
 			}

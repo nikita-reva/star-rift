@@ -1,5 +1,6 @@
 package game;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -20,6 +21,8 @@ public class ActionHandler implements ActionListener {
 			Var.btnoptions.setVisible(false);
 			Var.btnexit.setVisible(false);
 			Var.btnmute.setVisible(false);
+			Var.btntrack1.setVisible(false);
+			Var.btntrack2.setVisible(false);
 			Var.btntimelapse.setVisible(false);
 			Var.btnlives.setVisible(false);
 			Var.btnrockets.setVisible(false);
@@ -56,6 +59,8 @@ public class ActionHandler implements ActionListener {
 			Var.inoptions = true;
 			
 			Var.btnresume.setVisible(true);
+			Var.btntrack1.setVisible(true);
+			Var.btntrack2.setVisible(true);
 			Var.btnmute.setVisible(true);
 			Var.btnshop.setVisible(false);
 			Var.btnoptions.setVisible(false);
@@ -107,6 +112,20 @@ public class ActionHandler implements ActionListener {
 				Var.musicplayer.startmusic();
 				Var.stopmusic = false;
 			}
+			
+			Var.jf1.requestFocus();
+		} else if(e.getSource()==Var.btntrack1) {
+			Var.musicplayer.selecttrack("audio/molecule_leitmotiv.wav");
+			Var.musicplayer.playmusic();
+			Var.activetrack = 1;
+			Var.btntrack2.setBackground(Color.BLACK);
+			
+			Var.jf1.requestFocus();
+		} else if(e.getSource()==Var.btntrack2) {
+			Var.musicplayer.selecttrack("audio/Cosmo_and_Kramer-Really-Original.wav");
+			Var.musicplayer.playmusic();
+			Var.activetrack = 2;
+			Var.btntrack1.setBackground(Color.BLACK);
 			
 			Var.jf1.requestFocus();
 		} else if(e.getSource()==Var.btnstart) {

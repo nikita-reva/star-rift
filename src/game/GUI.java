@@ -133,7 +133,7 @@ public class GUI {
 		
 		Var.btnmute = new JButton();
 		Var.btnmute.setText("Mute");
-		Var.btnmute.setBounds(500, 400, 200, 50);
+		Var.btnmute.setBounds(500, 300, 200, 50);
 		Var.btnmute.setVisible(false);
 		Var.btnmute.addActionListener(new ActionHandler());
 		Var.btnmute.setBackground(Color.BLACK);
@@ -149,6 +149,56 @@ public class GUI {
 			public void mouseExited(MouseEvent evt) {
 				Var.btnmute.setBackground(Color.BLACK);
 				Var.btnmute.setForeground(Color.WHITE);
+			}
+		});
+		
+		Var.btntrack1 = new JButton();
+		Var.btntrack1.setText("Track 1");
+		Var.btntrack1.setBounds(500, 400, 200, 50);
+		Var.btntrack1.setVisible(false);
+		Var.btntrack1.addActionListener(new ActionHandler());
+		Var.btntrack1.setBackground(Color.BLUE);
+		Var.btntrack1.setFont(new Font("Arial", Font.BOLD, 40));
+		Var.btntrack1.setForeground(Color.WHITE);
+		Var.btntrack1.setBorder(null);
+		Var.btntrack1.setFocusPainted(false);
+		Var.btntrack1.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent evt) {
+				Var.btntrack1.setBackground(new Color(0, 230, 115));
+				Var.btntrack1.setForeground(Color.BLACK);
+			}
+			public void mouseExited(MouseEvent evt) {
+				if(Var.activetrack == 1) {
+					Var.btntrack1.setBackground(Color.BLUE);
+				} else {
+					Var.btntrack1.setBackground(Color.BLACK);
+				}
+				Var.btntrack1.setForeground(Color.WHITE);
+			}
+		});
+		
+		Var.btntrack2 = new JButton();
+		Var.btntrack2.setText("Track 2");
+		Var.btntrack2.setBounds(500, 500, 200, 50);
+		Var.btntrack2.setVisible(false);
+		Var.btntrack2.addActionListener(new ActionHandler());
+		Var.btntrack2.setBackground(Color.BLACK);
+		Var.btntrack2.setFont(new Font("Arial", Font.BOLD, 40));
+		Var.btntrack2.setForeground(Color.WHITE);
+		Var.btntrack2.setBorder(null);
+		Var.btntrack2.setFocusPainted(false);
+		Var.btntrack2.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent evt) {
+				Var.btntrack2.setBackground(new Color(0, 230, 115));
+				Var.btntrack2.setForeground(Color.BLACK);
+			}
+			public void mouseExited(MouseEvent evt) {
+				if(Var.activetrack == 2) {
+					Var.btntrack2.setBackground(Color.BLUE);
+				} else {
+					Var.btntrack2.setBackground(Color.BLACK);
+				}
+				Var.btntrack2.setForeground(Color.WHITE);
 			}
 		});
 		
@@ -304,6 +354,8 @@ public class GUI {
 		Var.jf1.add(Var.btnoptions);
 		Var.jf1.add(Var.btnexit);
 		Var.jf1.add(Var.btnmute);
+		Var.jf1.add(Var.btntrack1);
+		Var.jf1.add(Var.btntrack2);
 		Var.jf1.add(Var.btntimelapse);
 		Var.jf1.add(Var.btnlives);
 		Var.jf1.add(Var.btnrockets);

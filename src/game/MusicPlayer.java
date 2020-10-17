@@ -23,6 +23,20 @@ public class MusicPlayer {
 		}
 	}
 	
+	public void selecttrack(String track) {
+		clip.close();
+		musicpath = new File(track);
+		if(musicpath.exists()) {
+			try {
+				AudioInputStream inputstream = AudioSystem.getAudioInputStream(musicpath);
+				clip = AudioSystem.getClip();
+				clip.open(inputstream);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
 	public void playmusic() {
 		clip.loop(Clip.LOOP_CONTINUOUSLY);
 	}
