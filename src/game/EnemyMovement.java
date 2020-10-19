@@ -28,7 +28,7 @@ public class EnemyMovement {
 					for(int i = 0; i < 5; i++) {
 						Var.enemyY[i] += Var.enemyspeed[i];
 						if(Var.enemyY[i] >= Var.screenheight) {
-							Var.enemyY[i] = -100;
+							Var.enemyY[i] = -100 - rand.nextInt(200);
 							Var.enemyX[i] = 240*i + rand.nextInt(140);
 						}
 					}

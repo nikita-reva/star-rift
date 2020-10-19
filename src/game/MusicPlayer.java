@@ -44,8 +44,4 @@ public class MusicPlayer {
 	public void stopmusic() {
 		clip.stop();
 	}
-	
-	public void startmusic() {
-		clip.loop(Clip.LOOP_CONTINUOUSLY);
-	}
 }

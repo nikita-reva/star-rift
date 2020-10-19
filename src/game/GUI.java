@@ -203,7 +203,7 @@ public class GUI {
 		});
 		
 		Var.btntimelapse = new JButton();
-		Var.btntimelapse.setText("+ 5s");
+		Var.btntimelapse.setText("+ " + Var.addtimelapse + "s");
 		Var.btntimelapse.setBounds(700, 210, 200, 50);
 		Var.btntimelapse.setVisible(false);
 		Var.btntimelapse.addActionListener(new ActionHandler());
@@ -255,7 +255,7 @@ public class GUI {
 		});
 
 		Var.btnrockets = new JButton();
-		Var.btnrockets.setText("+ 20");
+		Var.btnrockets.setText("+ " + Var.addrockets);
 		Var.btnrockets.setBounds(700, 450, 200, 50);
 		Var.btnrockets.setVisible(false);
 		Var.btnrockets.addActionListener(new ActionHandler());
@@ -281,7 +281,7 @@ public class GUI {
 		});
 
 		Var.btnshield = new JButton();
-		Var.btnshield.setText("+ 5");
+		Var.btnshield.setText("+ " + Var.addshield);
 		Var.btnshield.setBounds(700, 570, 200, 50);
 		Var.btnshield.setVisible(false);
 		Var.btnshield.addActionListener(new ActionHandler());

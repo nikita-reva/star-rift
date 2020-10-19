@@ -31,13 +31,13 @@ public class KeyHandler implements KeyListener {
 		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
 			if(Var.gamerunning && Var.rockets > 0 && Var.rocketfired == false) {
 				Var.rocketfired = true;
-				Var.rocketposX = Var.playerpositionX + 50;
+				Var.rocketposX = Var.playerpositionX + Var.playerwidth/2 - 10;
 				Var.rocketposY = Var.playerpositionY;
 				Var.rockets--;
 			}
 		}
 		if(e.getKeyCode() == KeyEvent.VK_T) {
-			if(Var.timelapsesec > 0) {
+			if(Var.gamerunning  && Var.timelapsesec > 0) {
 				Var.timelapse = true;
 			}
 		}

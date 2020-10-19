@@ -24,5 +24,6 @@ public class Main {
 		new Difficulty();
 		new Victory();
 		new Timelapse();
+		new Highscore();
 	}
 }

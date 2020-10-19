@@ -17,13 +17,14 @@ public class CollectablesCollisions {
 			public void run() {
 				
 				for(int i = 0; i < 3; i++) {
-					if(Var.playerpositionX >= Var.crystalsX[i] - 120 && 
-							Var.playerpositionX <= Var.crystalsX[i] + 50 && 
-							Var.playerpositionY <= Var.crystalsY[i] + 50 && 
-							Var.playerpositionY >= Var.crystalsY[i] - 90 ) {
+					if(Var.playerpositionX >= Var.crystalsX[i] - Var.playerwidth && 
+							Var.playerpositionX <= Var.crystalsX[i] + Var.collectsize && 
+							Var.playerpositionY <= Var.crystalsY[i] + (Var.collectsize - 10) && 
+							Var.playerpositionY >= Var.crystalsY[i] - (Var.playerheight - 10) ) {
 						
-						Var.crystalsX[i] = 50 + rand.nextInt(1100);
-						Var.crystalsY[i] = -5000;
+						Var.crystalsX[i] = 383*i + rand.nextInt(333);
+						Var.crystalsY[i] = -3000 - rand.nextInt(3000);
+						Var.crystalsspeed[i] = 5 + rand.nextInt(5);
 						Var.crystalscollected++;
 						
 						if(Var.crystalscollected >= 5 && Var.lives < Var.maxlives) {
@@ -39,13 +40,14 @@ public class CollectablesCollisions {
 				}
 				
 				for(int i = 0; i < 3; i++) {
-					if(Var.playerpositionX >= Var.coinsX[i] - 120 && 
-							Var.playerpositionX <= Var.coinsX[i] + 50 && 
-							Var.playerpositionY <= Var.coinsY[i] + 50 && 
-							Var.playerpositionY >= Var.coinsY[i] - 90 ) {
+					if(Var.playerpositionX >= Var.coinsX[i] - Var.playerwidth && 
+							Var.playerpositionX <= Var.coinsX[i] + Var.collectsize && 
+							Var.playerpositionY <= Var.coinsY[i] + (Var.collectsize - 10) && 
+							Var.playerpositionY >= Var.coinsY[i] - (Var.playerheight - 10) ) {
 						
-						Var.coinsX[i] = 400 * i + rand.nextInt(400);
-						Var.coinsY[i] = -1200;
+						Var.coinsspeed[i] = 5 + rand.nextInt(5);
+						Var.coinsX[i] = 333 * i + rand.nextInt(333);
+						Var.coinsY[i] = -2000 - rand.nextInt(4000);
 						Var.coinscollected += 10;
 					}
 				}

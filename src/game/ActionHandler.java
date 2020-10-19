@@ -76,7 +76,7 @@ public class ActionHandler implements ActionListener {
 		} else if(e.getSource()==Var.btntimelapse) {
 			if(Var.coinscollected >= Var.pricetimelapse) {
 				Var.coinscollected -= Var.pricetimelapse;
-				Var.timelapsesec += 5;
+				Var.timelapsesec += Var.addtimelapse;
 				if(Var.timelapsems == 0) {
 					Var.timelapsems = 999;
 				}
@@ -92,14 +92,14 @@ public class ActionHandler implements ActionListener {
 		} else if(e.getSource()==Var.btnrockets) {
 			if(Var.coinscollected >= Var.pricerockets) {
 				Var.coinscollected -= Var.pricerockets;
-				Var.rockets += 20;
+				Var.rockets += Var.addrockets;
 			}
 			
 			Var.jf1.requestFocus();
 		} else if(e.getSource()==Var.btnshield) {
 			if(Var.coinscollected >= Var.priceshield) {
 				Var.coinscollected -= Var.priceshield;
-				Var.shieldcharges += 5;
+				Var.shieldcharges += Var.addshield;
 				Var.shieldactive = true;
 			}
 			
@@ -109,7 +109,7 @@ public class ActionHandler implements ActionListener {
 				Var.musicplayer.stopmusic();
 				Var.stopmusic = true;
 			} else if (Var.stopmusic = true) {
-				Var.musicplayer.startmusic();
+				Var.musicplayer.playmusic();
 				Var.stopmusic = false;
 			}
 			

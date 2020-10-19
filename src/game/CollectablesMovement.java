@@ -12,18 +12,14 @@ public class CollectablesMovement {
 	public CollectablesMovement() {
 		
 		for(int i = 0; i < 3; i++) {
-			Var.crystalsX[i] = 50 + rand.nextInt(1100);
-			Var.crystalsY[i] = -400 ;
+			Var.crystalsX[i] = 383*i + rand.nextInt(333);
+			Var.crystalsY[i] = -200 - rand.nextInt(300);
 		}
 		
-		Var.coinsX[0] = 0 + rand.nextInt(400);
-		Var.coinsY[0] = -200 + rand.nextInt(500);
-		
-		Var.coinsX[1] = 400 + rand.nextInt(400);
-		Var.coinsY[1] = -200 + rand.nextInt(500);
-		
-		Var.coinsX[2] = 800 + rand.nextInt(350);
-		Var.coinsY[2] = -200 + rand.nextInt(500);
+		for(int i = 0; i < 3; i++) {
+			Var.coinsX[i] = 383*i + rand.nextInt(333);
+			Var.coinsY[i] = -200 - rand.nextInt(500) ;
+		}
 		
 		movement = new Timer();
 		movement.scheduleAtFixedRate(new TimerTask() {
@@ -36,22 +32,18 @@ public class CollectablesMovement {
 						Var.crystalsY[i] += Var.crystalsspeed[i];
 						Var.coinsY[i] += Var.coinsspeed[i];
 						if(Var.crystalsY[i] >= Var.screenheight) {
-							Var.crystalsX[i] = 50 + rand.nextInt(1100);
-							Var.crystalsY[i] = -1000;
+							Var.crystalsX[i] = 383*i + rand.nextInt(333);
+							Var.crystalsY[i] = -2000 - rand.nextInt(3000);
+							Var.crystalsspeed[i] = 5 + rand.nextInt(5);
 						}
 					}
 					
-					if(Var.coinsY[0] >= Var.screenheight) {
-						Var.coinsY[0] = -1200;
-						Var.coinsX[0] = 0 + rand.nextInt(400);
-					}
-					else if(Var.coinsY[1] >= Var.screenheight) {
-						Var.coinsY[1] = -1200;
-						Var.coinsX[1] = 400 + rand.nextInt(400);
-					}
-					else if(Var.coinsY[2] >= Var.screenheight) {
-						Var.coinsY[2] = -1200;
-						Var.coinsX[2] = 800 + rand.nextInt(350);
+					for(int i = 0; i < 3; i++) {
+						if(Var.coinsY[i] >= Var.screenheight) {
+							Var.coinsX[i] = 383*i + rand.nextInt(333);
+							Var.coinsY[i] = -2000 - rand.nextInt(3000);
+							Var.coinsspeed[i] = 5 + rand.nextInt(5);
+						}
 					}
 				}
 			

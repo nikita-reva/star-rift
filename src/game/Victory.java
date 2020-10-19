@@ -27,7 +27,7 @@ public class Victory {
 					Var.shieldcharges = 0;
 					Var.timelapsesec = 10;
 					Var.timelapsems = 999;
-					Var.rockets = 20;
+					Var.rockets = 10;
 					Var.lives = 3;
 					Var.maxlives = 5;
 					

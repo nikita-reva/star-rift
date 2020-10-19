@@ -21,24 +21,24 @@ public class EnemyCollisions {
 					if(temp == 0) {
 						
 						if(Var.shieldcharges > 0) {
-							if(Var.playerpositionX >= Var.enemyX[i] - 100 && 
-									Var.playerpositionX <= Var.enemyX[i] + 80 && 
-									Var.playerpositionY <= Var.enemyY[i] + 80 && 
-									Var.playerpositionY >= Var.enemyY[i] - 70 ) {
+							if(Var.playerpositionX >= Var.enemyX[i] - (Var.playerwidth - 5) && 
+									Var.playerpositionX <= Var.enemyX[i] + (Var.enemywidth - 5) && 
+									Var.playerpositionY <= Var.enemyY[i] + (Var.enemyheight - 30) && 
+									Var.playerpositionY >= Var.enemyY[i] - (Var.playerheight - 50) ) {
 								
 								Var.collided = true;
-								Var.enemyY[i] = -100;
+								Var.enemyY[i] = -200 - rand.nextInt(200);;
 								Var.enemyX[i] = 240*i + rand.nextInt(140);
 								Var.shieldcharges--;
 							} 
 						} else {
-							if(Var.playerpositionX >= Var.enemyX[i] - 100 && 
-									Var.playerpositionX <= Var.enemyX[i] + 80 && 
-									Var.playerpositionY <= Var.enemyY[i] + 80 && 
-									Var.playerpositionY >= Var.enemyY[i] - 70 ) {
+							if(Var.playerpositionX >= Var.enemyX[i] - (Var.playerwidth - 10) && 
+									Var.playerpositionX <= Var.enemyX[i] + (Var.enemywidth - 10) && 
+									Var.playerpositionY <= Var.enemyY[i] + (Var.enemyheight - 30) && 
+									Var.playerpositionY >= Var.enemyY[i] - (Var.playerheight - 50) ) {
 								
 								Var.collided = true;
-								Var.enemyY[i] = -100;
+								Var.enemyY[i] = -200 - rand.nextInt(200);
 								Var.enemyX[i] = 240*i + rand.nextInt(140);
 								Var.coinscollected -= 20;
 								if(Var.coinscollected < 0) {

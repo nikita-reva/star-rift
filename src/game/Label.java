@@ -26,12 +26,12 @@ public class Label extends JLabel {
 			g.drawImage(Var.ib2, 0, Var.backgroundY2, Var.screenwidth, Var.screenheight, null);
 			
 			for (int i = 0; i < 3; i++) {
-				g.drawImage(Var.icrystals, Var.crystalsX[i], Var.crystalsY[i], 50, 50, null);
-				g.drawImage(Var.icoins, Var.coinsX[i], Var.coinsY[i], 50, 50, null);
+				g.drawImage(Var.icrystals, Var.crystalsX[i], Var.crystalsY[i], Var.collectsize, Var.collectsize, null);
+				g.drawImage(Var.icoins, Var.coinsX[i], Var.coinsY[i], Var.collectsize, Var.collectsize, null);
 			}
 			
 			for (int i = 0; i < 5; i++) {
-				g.drawImage(Var.ienemy, Var.enemyX[i], Var.enemyY[i], 100, 100, null);
+				g.drawImage(Var.ienemy, Var.enemyX[i], Var.enemyY[i], Var.enemywidth, Var.enemyheight, null);
 			}
 			
 			if(Var.rocketfired) {
@@ -44,16 +44,16 @@ public class Label extends JLabel {
 			
 			if(!Var.failed) {
 				if(Var.flameanimation == 0) {
-					g.drawImage(Var.iflame1, Var.playerpositionX + Var.playerwidth/4, Var.playerpositionY + Var.playerheight, 60, 75, null);
+					g.drawImage(Var.iflame1, Var.playerpositionX + Var.playerwidth/2 - 30, Var.playerpositionY + Var.playerheight, 60, 75, null);
 				}
 				else if(Var.flameanimation == 1) {
-					g.drawImage(Var.iflame2, Var.playerpositionX + Var.playerwidth/4, Var.playerpositionY + Var.playerheight, 60, 75, null);
+					g.drawImage(Var.iflame2, Var.playerpositionX + Var.playerwidth/2 - 30, Var.playerpositionY + Var.playerheight, 60, 75, null);
 				}
 				
 				g.drawImage(Var.ispaceship, Var.playerpositionX, Var.playerpositionY, Var.playerwidth, Var.playerheight, null);
 				
 				if(Var.shieldcharges > 0) {
-					g.drawImage(Var.ishieldgame, Var.playerpositionX - 10, Var.playerpositionY - 40, 140, 80, null);
+					g.drawImage(Var.ishieldgame, Var.playerpositionX - (Var.shieldwidth - Var.playerwidth)/2, Var.playerpositionY - 40, Var.shieldwidth, Var.shieldheight, null);
 				}
 			}
 			
@@ -61,20 +61,20 @@ public class Label extends JLabel {
 				if(Var.shieldcharges > 0) {
 					for(int i = 0; i < 17; i++) {
 						if(Var.expanimation2 == i) {
-							g.drawImage(Var.iexplosiondamaged[i], Var.playerpositionX + 5, Var.playerpositionY - 90, 120, 120, null);
+							g.drawImage(Var.iexplosiondamaged[i], Var.playerpositionX - 10, Var.playerpositionY - 90, 120, 120, null);
 						}
 					}
 				} else {
 					if(Var.shieldactive == true && Var.shieldcharges == 0) {
 						for(int i = 0; i < 17; i++) {
 							if(Var.expanimation2 == i) {
-								g.drawImage(Var.iexplosiondamaged[i], Var.playerpositionX + 5, Var.playerpositionY - 90, 120, 120, null);
+								g.drawImage(Var.iexplosiondamaged[i], Var.playerpositionX - 10, Var.playerpositionY - 90, 120, 120, null);
 							}
 						}
 					} else {
 						for(int i = 0; i < 17; i++) {
 							if(Var.expanimation2 == i) {
-								g.drawImage(Var.iexplosiondamaged[i], Var.playerpositionX + 5, Var.playerpositionY - 50, 120, 120, null);
+								g.drawImage(Var.iexplosiondamaged[i], Var.playerpositionX - 10, Var.playerpositionY - 50, 120, 120, null);
 							}
 						}
 						g.setColor(new Color(230, 0, 0, 45));
@@ -131,8 +131,8 @@ public class Label extends JLabel {
 			g.drawImage(Var.ib2, 0, Var.backgroundY2, Var.screenwidth, Var.screenheight, null);
 			
 			for (int i = 0; i < 3; i++) {
-				g.drawImage(Var.icrystals, Var.crystalsX[i], Var.crystalsY[i], 50, 50, null);
-				g.drawImage(Var.icoins, Var.coinsX[i], Var.coinsY[i], 50, 50, null);
+				g.drawImage(Var.icrystals, Var.crystalsX[i], Var.crystalsY[i], Var.collectsize, Var.collectsize, null);
+				g.drawImage(Var.icoins, Var.coinsX[i], Var.coinsY[i], Var.collectsize, Var.collectsize, null);
 			}
 			
 			for (int i = 0; i < 5; i++) {
@@ -140,10 +140,10 @@ public class Label extends JLabel {
 			}
 			
 			if(Var.flameanimation == 0) {
-				g.drawImage(Var.iflame1, Var.playerpositionX + Var.playerwidth/4, Var.playerpositionY + Var.playerheight, 60, 75, null);
+				g.drawImage(Var.iflame1, Var.playerpositionX + Var.playerwidth/2 - 30, Var.playerpositionY + Var.playerheight, 60, 75, null);
 			}
 			else if(Var.flameanimation == 1) {
-				g.drawImage(Var.iflame2, Var.playerpositionX + Var.playerwidth/4, Var.playerpositionY + Var.playerheight, 60, 75, null);
+				g.drawImage(Var.iflame2, Var.playerpositionX + Var.playerwidth/2 - 30, Var.playerpositionY + Var.playerheight, 60, 75, null);
 			}
 			g.drawImage(Var.ispaceship, Var.playerpositionX, Var.playerpositionY, Var.playerwidth, Var.playerheight, null);
 			
@@ -172,6 +172,7 @@ public class Label extends JLabel {
 			g.setColor(new Color(0, 230, 115));
 			g.setFont(new Font("Arial", Font.BOLD, 30));
 			
+			g.drawString("Highscore: " + Var.highscore, 50, 50);
 			
 			g.drawImage(Var.itimelapse, 50, 655, 50, 50, null);
 			g.drawString("" + (Var.timelapsesec == 0 ? Var.timelapsesec : Var.timelapsesec - 1) + "s", 120, 690);
