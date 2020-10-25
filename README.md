@@ -7,7 +7,7 @@ Enemies - Colliding with an enemy costs you 1 life and 20 coins - If the number 
 
 Collectables - Collecting a coin item adds 10 coins - Collecting a crystal item adds 1 crystal - By collecting 5 crystals, the player gains 1 addidional life - If the maximum life number is reached, collecting crystals adds 2 coins - The game stops if 600 coins are collected
 
-Controls: - The star ship can be controlled with the arrow keys - Rockets can be fired by pressing the Space key - The timelapse function can be activated by pressing the t-letter key - By pressing the Escape key the game is paused and the game menu is opened - By pressing the s-letter key the game is paused and the shop menu is opened - Pressing the Escape or s-letter key, the munues are closed and the game is unpaused
+Controls: - The star ship can be controlled with the arrow keys - Rockets can be fired by pressing the Space key - The timelapse function can be activated by pressing the t-letter key - By pressing the Escape key the game is paused and the game menu is opened - By pressing the s-letter key the game is paused and the shop menu is opened - Pressing the Escape or s-letter key, the munues are closed and the game is unpaused - The music can be muted by pressing the m-letter-key
 
 Shop menu: - Different items can be bought by pressing the buttons - Coins must be spent to buy items - By buying the timelpase item, you gain 5s of timelapse - By buying the life item, your maximum life is increased by 1 - By buying the rockets item, you gain 10 rockets - By buying the shield item, you gain 5 plasma shield charges
 
