@@ -21,13 +21,12 @@ public class Highscore {
 	JSONParser parser;
 	String hsfilename = "highscore.json";
 	
-	public void createSaveData() {
+	private void createSaveData() {
 		try {
 			jsonobj = new JSONObject();
 			jsonobj.put("highscore", 0);
 			File file = new File(Var.saveDataPath, hsfilename);
-			FileWriter output = new FileWriter(file);
-			BufferedWriter writer = new BufferedWriter(output);
+			BufferedWriter writer = new BufferedWriter(new FileWriter(file));
 			writer.write(jsonobj.toString());
 			writer.flush();
 			writer.close();
@@ -36,10 +35,10 @@ public class Highscore {
 		}
 	}
 	
-	public void loadHighscore() {
+	private void loadHighscore() {
 		try {
 			File file = new File(Var.saveDataPath, hsfilename);
-			if(!file.isFile()) {
+			if(!file.exists()) {
 				createSaveData();
 			}
 			parser = new JSONParser();
@@ -61,7 +60,7 @@ public class Highscore {
 		
 	}
 	
-	public void setHighscore() {
+	private void setHighscore() {
 		Var.highscore = Var.coinscollected;
 		jsonobj.put("highscore", Var.coinscollected);
 		File file = new File(Var.saveDataPath, hsfilename);

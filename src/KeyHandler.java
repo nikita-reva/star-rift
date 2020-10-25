@@ -39,6 +39,15 @@ public class KeyHandler implements KeyListener {
 				Var.timelapse = true;
 			}
 		}
+		if(e.getKeyCode() == KeyEvent.VK_M) {
+			if(Var.stopmusic == false) {
+				Var.musicplayer.stopmusic();
+				Var.stopmusic = true;
+			} else if (Var.stopmusic = true) {
+				Var.musicplayer.playmusic();
+				Var.stopmusic = false;
+			}
+		}
 		
 		if(gamepaused == 0) {
 			// Menue

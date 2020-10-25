@@ -129,8 +129,17 @@ public class Var {
 		
 		try {
 			saveDataPath = Var.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath();
+			String[] array = new String[10];
+			String newPath = "";
+			array = saveDataPath.split("/");
+			for(int i = 0; i < array.length - 2; i++) {
+				newPath = String.join("/", newPath, array[i+1]);
+
+			}
+			saveDataPath = newPath;
 			// saveDataPath = System.getProperty("user.home") + "\\highscore";
 			System.out.println(saveDataPath);
+			System.out.println(array[3] + " " + array.length);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
