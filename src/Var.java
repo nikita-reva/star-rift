@@ -139,7 +139,6 @@ public class Var {
 			saveDataPath = newPath;
 			// saveDataPath = System.getProperty("user.home") + "\\highscore";
 			System.out.println(saveDataPath);
-			System.out.println(array[3] + " " + array.length);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
