@@ -23,5 +23,6 @@ public class Main {
 		new Victory();
 		new Timelapse();
 		new Highscore();
+		new FastestTime();
 	}
 }

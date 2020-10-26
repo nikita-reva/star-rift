@@ -52,7 +52,7 @@ public class Var {
 	static int timelapsems = 999;
 	static int activetrack = 1;
 	static long highscore = 0;
-	static int coinstovictory = 600;
+	static int coinstovictory = 30;
 	
 	// Flags (booleans)
 	static boolean gamerunning = false, instartscreen = true, inmenue = false, inoptions = false, inshop = false;
@@ -63,7 +63,7 @@ public class Var {
 	static boolean rocketfired = false, enemyhit = false;
 	static boolean stopmusic = false;
 	static boolean timelapse = false;
-	static boolean settime = false;
+	static boolean besttime = false;
 	
 	// Images
 	static Image ib1, ib2;
@@ -146,7 +146,6 @@ public class Var {
 			}
 			saveDataPath = newPath;
 			// saveDataPath = System.getProperty("user.home") + "\\highscore";
-			System.out.println(saveDataPath);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

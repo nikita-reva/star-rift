@@ -212,9 +212,17 @@ public class Label extends JLabel {
 			
 			g.drawImage(Var.ispaceship, Var.playerpositionX, Var.playerpositionY, Var.playerwidth, Var.playerheight, null);
 			
-			g.setColor(new Color(120, 30, 180));
+			
 			g.setFont(new Font("Arial", Font.BOLD, 40));
-			g.drawString("Elapsed Time: " + Var.elapsedTime, 355, 250);
+			g.setColor(new Color(220, 220, 240));
+			g.drawString("Best Time: " + Var.fastestTime, 390, 200);
+			if(Var.besttime) {
+				g.setColor(new Color(30, 200, 60));
+			} else {
+				g.setColor(new Color(200, 30, 60));
+			}
+			g.drawString("Your Time: " + Var.elapsedTime, 390, 250);
+			g.setColor(new Color(120, 30, 180));
 			g.setFont(new Font("Arial", Font.BOLD, 80));
 			g.drawString("Victory!", 455, 350);
 

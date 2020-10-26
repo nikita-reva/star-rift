@@ -51,7 +51,7 @@ public class KeyHandler implements KeyListener {
 		
 		if(gamepaused == 0) {
 			// Menue
-			if(e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+			if(e.getKeyCode() == KeyEvent.VK_ESCAPE && !Var.victory) {
 				Var.gamerunning = false;
 				Var.inmenue = true;
 				Var.inshop = false;
@@ -66,7 +66,7 @@ public class KeyHandler implements KeyListener {
 				Var.moveright = false;
 				Var.timelapse = false;
 				gamepaused++;
-			} else if(e.getKeyCode() == KeyEvent.VK_S) {
+			} else if(e.getKeyCode() == KeyEvent.VK_S && !Var.victory) {
 				Var.gamerunning = false;
 				Var.inmenue = false;
 				Var.inshop = true;
