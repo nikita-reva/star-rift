@@ -33,6 +33,9 @@ public class CollectablesCollisions {
 						if(Var.lives >= Var.maxlives) {
 							Var.crystalscollected = 0;
 							Var.coinscollected += 2;
+							if(Var.coinscollected >= Var.coinstovictory) {
+								Var.victory = true;
+							}
 						}
 					}
 				}
@@ -47,12 +50,16 @@ public class CollectablesCollisions {
 						Var.coinsX[i] = 333 * i + rand.nextInt(333);
 						Var.coinsY[i] = -2000 - rand.nextInt(4000);
 						Var.coinscollected += 10;
+						
+						if(Var.coinscollected >= Var.coinstovictory) {
+							Var.victory = true;
+						}
 					}
 				}
 				
 			}
 			
-		}, 0, 12);
+		}, 0, 8);
 	}
 	
 }

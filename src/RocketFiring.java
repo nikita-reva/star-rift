@@ -27,6 +27,9 @@ public class RocketFiring {
 							Var.rocketfired = false;
 							Var.enemyhit = true;
 							Var.coinscollected += 2;
+							if(Var.coinscollected >= Var.coinstovictory) {
+								Var.victory = true;
+							}
 							
 							Var.rocketposX = Var.screenwidth + 200;
 							

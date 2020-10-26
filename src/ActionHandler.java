@@ -130,10 +130,12 @@ public class ActionHandler implements ActionListener {
 			Var.btnstart.setVisible(false);
 			Var.instartscreen = false;
 			Var.gamerunning = true;
+			Var.startTime = System.nanoTime();
 			
 			Var.jf1.requestFocus();
 		}	else if(e.getSource()==Var.btnrestart) {
 			Var.victory = false;
+			Var.startTime = System.nanoTime();
 			Var.btnrestart.setVisible(false);
 			Var.btnclose.setVisible(false);		
 			Var.gamerunning = true;

@@ -12,11 +12,16 @@ public class Victory {
 			@Override
 			public void run() {
 				
-				if(Var.coinscollected >= 600) {
-					Var.victory = true;
-				}
 				if(Var.victory) {
+					if(Var.gamerunning) {
+						Var.elapsedTime = Var.elapsingTime;
+						if(Var.elapsedMS < Var.fastestMS) {
+							Var.fastestMS = Var.elapsedMS;
+							Var.fastestTime = Highscore.formatTime(Var.elapsedMS);
+						}
+					}
 					Var.gamerunning = false;
+					Var.settime = false;
 					Var.btnrestart.setVisible(true);
 					Var.btnclose.setVisible(true);
 					

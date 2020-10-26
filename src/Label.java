@@ -171,6 +171,8 @@ public class Label extends JLabel {
 			g.setFont(new Font("Arial", Font.BOLD, 30));
 			
 			g.drawString("Highscore: " + Var.highscore, 50, 50);
+			g.drawString("Fastest Time: " + Var.fastestTime, 50, 80);
+			g.drawString("Elapsed Time: " + Var.elapsingTime, 50, 110);
 			
 			g.drawImage(Var.itimelapse, 50, 655, 50, 50, null);
 			g.drawString("" + (Var.timelapsesec == 0 ? Var.timelapsesec : Var.timelapsesec - 1) + "s", 120, 690);
@@ -211,8 +213,11 @@ public class Label extends JLabel {
 			g.drawImage(Var.ispaceship, Var.playerpositionX, Var.playerpositionY, Var.playerwidth, Var.playerheight, null);
 			
 			g.setColor(new Color(120, 30, 180));
+			g.setFont(new Font("Arial", Font.BOLD, 40));
+			g.drawString("Elapsed Time: " + Var.elapsedTime, 355, 250);
 			g.setFont(new Font("Arial", Font.BOLD, 80));
 			g.drawString("Victory!", 455, 350);
+
 			
 			repaint();
 		}

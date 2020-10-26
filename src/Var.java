@@ -52,6 +52,7 @@ public class Var {
 	static int timelapsems = 999;
 	static int activetrack = 1;
 	static long highscore = 0;
+	static int coinstovictory = 30;
 	
 	// Flags (booleans)
 	static boolean gamerunning = false, instartscreen = true, inmenue = false, inoptions = false, inshop = false;
@@ -62,6 +63,7 @@ public class Var {
 	static boolean rocketfired = false, enemyhit = false;
 	static boolean stopmusic = false;
 	static boolean timelapse = false;
+	static boolean settime = false;
 	
 	// Images
 	static Image ib1, ib2;
@@ -79,6 +81,13 @@ public class Var {
 	static Image gifenemyexplosion;
 	
 	static String saveDataPath;
+	
+	static long startTime;
+	static long elapsedMS;
+	static long fastestMS = Integer.MAX_VALUE;
+	static String elapsingTime ="00:00:000";
+	static String elapsedTime ="00:00:000";
+	static String fastestTime = "00:00:000";
 	
 	// Music
 	static MusicPlayer musicplayer = new MusicPlayer(ResourceLoader.getTrack("molecule_leitmotiv.wav"));
@@ -134,7 +143,6 @@ public class Var {
 			array = saveDataPath.split("/");
 			for(int i = 0; i < array.length - 2; i++) {
 				newPath = String.join("/", newPath, array[i+1]);
-
 			}
 			saveDataPath = newPath;
 			// saveDataPath = System.getProperty("user.home") + "\\highscore";
@@ -142,6 +150,7 @@ public class Var {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+
 	}
 	
 }
