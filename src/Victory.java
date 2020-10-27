@@ -13,16 +13,7 @@ public class Victory {
 			public void run() {
 				
 				if(Var.victory) {
-					if(Var.gamerunning) {
-						Var.elapsedTime = Var.elapsingTime;
-						if(Var.elapsedMS < Var.fastestMS) {
-							Var.besttime = true;
-							Var.fastestMS = Var.elapsedMS;
-							Var.fastestTime = FastestTime.formatTime(Var.elapsedMS);
-						} else {
-							Var.besttime = false;
-						}
-					}
+					
 					Var.gamerunning = false;
 					Var.btnrestart.setVisible(true);
 					Var.btnclose.setVisible(true);

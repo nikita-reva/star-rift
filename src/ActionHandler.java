@@ -134,6 +134,7 @@ public class ActionHandler implements ActionListener {
 			
 			Var.jf1.requestFocus();
 		}	else if(e.getSource()==Var.btnrestart) {
+			FastestTime.timeset = 0;
 			Var.victory = false;
 			Var.startTime = System.nanoTime();
 			Var.btnrestart.setVisible(false);

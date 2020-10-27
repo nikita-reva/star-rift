@@ -52,7 +52,7 @@ public class Var {
 	static int timelapsems = 999;
 	static int activetrack = 1;
 	static long highscore = 0;
-	static int coinstovictory = 600;
+	static int coinstovictory = 10;
 	
 	// Flags (booleans)
 	static boolean gamerunning = false, instartscreen = true, inmenue = false, inoptions = false, inshop = false;

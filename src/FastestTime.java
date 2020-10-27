@@ -20,6 +20,7 @@ public class FastestTime {
 	JSONObject jsonobj;
 	JSONParser parser;
 	String ftfilename = "fastesttime.json";
+	static int timeset = 0;
 	
 	private void createSaveData() {
 		try {
@@ -39,8 +40,14 @@ public class FastestTime {
 	private void loadFastestTime() {
 		try {
 			File file = new File(Var.saveDataPath, ftfilename);
+			
 			if(!file.isFile()) {
 				createSaveData();
+			} else {
+				if(file.length() == 0) {
+					file.delete();
+					createSaveData();
+				}
 			}
 			parser = new JSONParser();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
@@ -64,18 +71,28 @@ public class FastestTime {
 	}
 	
 	private void setFastestTime() {
+		if(timeset == 0) {
+			Var.elapsedTime = Var.elapsingTime;
+			if(Var.elapsedMS < Var.fastestMS) {
+				Var.besttime = true;
+				Var.fastestMS = Var.elapsedMS;
+				Var.fastestTime = FastestTime.formatTime(Var.elapsedMS);
+			} else {
+				Var.besttime = false;
+			}
 		
-		jsonobj.put("fastestMS", Var.fastestMS);
-		jsonobj.put("fastestTime", Var.fastestTime);
-		
-		File file = new File(Var.saveDataPath, ftfilename);
-		
-		try(BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
-			writer.write(jsonobj.toString());
-			writer.flush();
-			writer.close();
-		} catch (IOException e) {
-			e.printStackTrace();
+			File file = new File(Var.saveDataPath, ftfilename);
+			jsonobj.put("fastestMS", Var.fastestMS);
+			jsonobj.put("fastestTime", Var.fastestTime);
+			
+			try(BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+				writer.write(jsonobj.toString());
+				writer.flush();
+				writer.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			timeset++;
 		}
 	}
 	

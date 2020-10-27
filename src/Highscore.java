@@ -40,6 +40,11 @@ public class Highscore {
 			File file = new File(Var.saveDataPath, hsfilename);
 			if(!file.isFile()) {
 				createSaveData();
+			} else {
+				if(file.length() == 0) {
+					file.delete();
+					createSaveData();
+				}
 			}
 			parser = new JSONParser();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
