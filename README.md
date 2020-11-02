@@ -1,4 +1,7 @@
 # star-rift
+
+![Star Rift Logo](/rsc/images/star_rift_logo.png)
+
 How to play the game:
 
 General: - The main goal is to collect as many coins as possible - At the beginning the player has 3 lives, 10s timelapse and 10 rockets - The maximum number of lives is limited to 5 at the beginning
