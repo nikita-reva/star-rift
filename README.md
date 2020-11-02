@@ -1,6 +1,6 @@
 # star-rift
 
-![Star Rift Logo](/rsc/images/star_rift_logo.png)
+![Title Image](title_img.png)
 
 How to play the game:
 
